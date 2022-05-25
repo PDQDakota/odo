@@ -236,15 +236,14 @@ echo 'export PATH=$PATH:$HOME/bin' >> ~/.bashrc
 
 2. Download the latest release from the mirror:
 ```shell
-curl -L https://developers.redhat.com/content-gateway/rest/mirror/pub/openshift-v4/clients/odo/latest/odo-windows-amd64.exe -o odo.exe
+curl.exe -L https://developers.redhat.com/content-gateway/rest/mirror/pub/openshift-v4/clients/odo/latest/odo-windows-amd64.exe -o odo.exe
 ```
 
 2. (Optional) Verify the downloaded binary with the SHA-256 sum:
 ```shell
-curl -L https://developers.redhat.com/content-gateway/rest/mirror/pub/openshift-v4/clients/odo/latest/odo-windows-amd64.exe.sha256 -o odo.exe.sha256
+curl.exe -L https://developers.redhat.com/content-gateway/rest/mirror/pub/openshift-v4/clients/odo/latest/odo-windows-amd64.exe.sha256 -o odo.exe.sha256
 # Visually compare the output of both files
-Get-FileHash odo.exe
-type odo.exe.sha256
+(Get-FileHash .\odo.exe).Hash -eq (type .\odo.exe.sha256)
 ```
 
 4. Add the binary to your `PATH`
